@@ -1,57 +1,87 @@
-# Exploratory--Data-Analysis-of-Credit-Card-Data
-This Case Study has been done on the top of python 3.7 by using folowing packages on Jupyter Notebook :
-#### pandas,
-#### numpy,
-#### matplotlib 
-#### seaborn 
+📌 Project Overview
+This project involves a comprehensive case study for PSPD Bank, a global financial institution operating in 50+ countries. The goal is to leverage data analytics to evaluate customer spending and repayment behavior, identify fraud risks, and optimize marketing strategies through data-driven decision-making.
 
- 
-The problem of this case study is given below:
+🛠️ Technologies & Tools
+Language: Python 3.7
 
-ANALYTICS IN CREDIT CARD INDUSTRY:
+Environment: Jupyter Notebook
 
-Analytics has penetrated every industry owing to the various technology platforms that collect information and thus, the service providers know what exactly customers want. The Credit Card industry is no exception.
-Within credit card payment processing, there is a significant amount of data available that can be beneficial in countless ways.
+Libraries: * Pandas: Data manipulation and ETL processes.
 
-Understanding the customer behaviour The data available from a credit card processor identifies the types of consumer and their business spending behaviors.
-Hence, developing the marketing campaigns to directly address their behaviors indeed grows the revenue and these considerations will result in greater sales.
+NumPy: Numerical operations and data cleaning.
 
-Personalize offering based on data results Data also reveals specific interests and needs in individual customers that a company can leverage, this addressing their needs more efficiently.
-Specific promotions can be sent out related to where these customers are located and this builds sales more quickly.
+Matplotlib & Seaborn: Advanced data visualization and trend analysis.
 
-Use trends and patterns to get new customers The transactions and activities of the existing customers that they do in terms of purchase behavior tends to reflect larger trends that are coming. 
-This information provides a strategy to go after possible customers in the target audience.
+📂 Dataset Architecture
+The analysis is performed across three primary relational datasets:
 
-Uncover suspicious activity The data from credit card processing is becoming increasingly important as a tool to fight fraud.
-When combined with artificial intelligence, this data is being analyzed quickly to uncover areas of purchase activity.
+Customer Acquisition: Demographic profiles and credit limits at the time of card issuance.
 
-Reduce chargebacks The ability to detect suspicious activity and patterns in data can also assess whether or not a transaction might result in a chargeback.
-Using analytics to track each transaction reveals anomalies. This information can help you reject that transaction and save your business from chargebacks.
+Spend (Transaction Data): Detailed records of credit card expenditures per customer.
 
-### BUSINESS PROBLEM:
-In order to effectively produce quality decisions in the modern credit card industry, knowledge must be gained through effective data analysis and modeling. 
-Through the use of dynamic datadriven decision-making tools and procedures, information can be gathered to successfully evaluate all aspects of credit card operations.
-PSPD Bank has banking operations in more than 50 countries across the globe.
-Mr. Jim Watson, CEO, wants to evaluate areas of bankruptcy, fraud, and collections, respond to customer requests for help with proactive offers and service.
-### DATA AVAILABLE 
-This book has the following sheets:
-##### Customer Acquisition: At the time of card issuing, company maintains the details of customers. 
-##### Spend (Transaction data): Credit card spend for each customer
-##### Repayment: Credit card Payment done by customer
+Repayment: Historical data of credit card payments made by customers.
 
-Following are some of Mr. Watson’s questions to a Consultant (like you) to understand the customers spend & repayment behavior.
+🏗️ Data Engineering & Cleaning (ETL)
+To ensure data integrity, the following business logic was implemented during the preprocessing phase:
 
-In the above dataset,
-##### Problem 1
-##### a. In case age is less than 18, replace it with mean of age values.,b. In case spend amount is more than the limit, replace it with 50% of that customer’s limit. (customer’s limit provided in acquisition table is the per transaction limit on his card), c. Incase the repayment amount is more than the limit, replace the repayment with the limit. 
+Age Normalization: Replaced instances where Age < 18 with the mean age of the dataset.
 
-##### Problem 2.
-##### From the above dataset create the following summaries:
-#####  a. How many distinct customers exist?, b. How many distinct categories exist?, c. What is the average monthly spend by customers?,d. What is the average monthly repayment by customers? e. If the monthly rate of interest is 2.9%, what is the profit for the bank for each month? (Profit is defined as interest earned on Monthly Profit. Monthly Profit = Monthly repayment – Monthly spend. Interest is earned only on positive profits and not on negative amounts) f. What are the top 5 product types?, g. Which city is having maximum spend?, h. Which age group is spending more money? i. Who are the top 10 customers in terms of repayment?
-##### Problem 3:
-##### Calculate the city wise spend on each product on yearly basis. Also include a graphical representation for the same.
-##### Create graphs for
-##### a. Monthly comparison of total spends, city wise, b. Comparison of yearly spend on air tickets, c. Comparison of monthly spend for each product (look for any seasonality that exists in terms of spend)
+Spend Optimization: Capped spend amounts exceeding the customer’s limit to 50% of the limit.
 
-##### Problem 4: 
-##### Write user defined PYTHON function to perform the following analysis: You need to find top 10 customers for each city in terms of their repayment amount by different products and by different time periods i.e. year or month. The user should be able to specify the product (Gold/Silver/Platinum) and time period (yearly or monthly) and the function should automatically take these inputs while identifying the top 10 customers.
+Repayment Correction: Adjusted repayment amounts to the customer's limit in cases of overpayment for accurate accounting.
+
+🔍 Key Analysis & Business Logic
+The project addresses several critical business questions, including:
+
+1. Financial Summaries
+Identification of distinct customers and product categories.
+
+Calculation of Average Monthly Spend and Average Monthly Repayment.
+
+Profitability Analysis: Calculated monthly bank profit based on a 2.9% interest rate applied to positive monthly balances (Repayment - Spend).
+
+2. Behavioral Insights
+Top Performance: Identification of the top 5 product types and top 10 customers by repayment.
+
+Geographic Analysis: Determining the city with the maximum expenditure.
+
+Demographic Segmentation: Analyzing spend patterns across different age groups.
+
+3. Time-Series & Comparative Visualizations
+Yearly City-wise Spend: Breakdown of spend on various products by city and year.
+
+Seasonality Check: Monthly comparison of spends to identify seasonal purchasing trends.
+
+Product-specific Trends: Yearly comparison of high-value categories like Air Tickets.
+
+🚀 Advanced Python Implementation
+Developed a dynamic user-defined function that allows stakeholders to filter data and identify the Top 10 Customers per city.
+
+Inputs: Product Type (Gold/Silver/Platinum) and Time Period (Yearly/Monthly).
+
+Output: A ranked list of customers based on repayment behavior for the specified parameters.
+
+📈 Dashboard & Visualizations
+(Note: If you have a Dashboard.png or Matplotlib plots, insert them here) The analysis includes graphical representations for:
+
+Monthly comparison of total spends, city-wise.
+
+Seasonal spend patterns across different product categories.
+
+💡 Recommendations for PSPD Bank
+Targeted Marketing: Develop specific campaigns for cities identified as "High Spend" hubs.
+
+Risk Management: Monitor customers frequently hitting the 50% limit cap for potential limit increases or risk assessment.
+
+Proactive Servicing: Use the monthly profit trends to offer proactive help or loyalty rewards to consistently profitable customers.
+
+🏁 How to Run
+Clone this repository:
+
+Bash
+git clone https://github.com/uma-sankar-krishnagiri/Credit-Card-Financial-Analysis.git
+Ensure Python 3.7+ and required libraries are installed:
+
+Bash
+pip install pandas numpy matplotlib seaborn
+Open Credit_Card_Analysis.ipynb in Jupyter Notebook to view the full analysis.
